@@ -273,25 +273,25 @@ function mx_player() {
 
 function playit_player() {
     const openstreamlink = streamlink;
-    const openPlayit = `playit://playerv2/video?url=${openbisallink}`;
+    const openPlayit = `playit://playerv2/video?url=${openstreamlink}`;
     window.location.href = openPlayit;
 }
 
 function s_player() {
     const openstreamlink = streamlink;
-    const openSplayer = `intent:${openbisallink}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+    const openSplayer = `intent:${openstreamlink}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
     window.location.href = openSplayer;
 }
 
 function km_player() {
     const openstreamlink = streamlink;
-    const openKmplayer = `intent:${openbisallink}#Intent;package=com.kmplayer;end`;
+    const openKmplayer = `intent:${openstreamlink}#Intent;package=com.kmplayer;end`;
     window.location.href = openKmplayer;
 }
 
 function hd_player() {
     const openstreamlink = streamlink;
-    const openHDplayer = `intent:${openbisallink}#Intent;package=uplayer.video.player;end`;
+    const openHDplayer = `intent:${openstreamlink}#Intent;package=uplayer.video.player;end`;
     window.location.href = openHDplayer;
 }
 
