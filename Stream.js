@@ -279,7 +279,7 @@ function playit_player() {
 
 function s_player() {
     const openstreamlink = streamlink;
-    const openSplayer = `intent:${openstreamlink}#Intent;action=com.ttee.leeplayer.playback_online;package=com.ttee.leeplayer;end`;
+    const openSplayer = `intent:${openstreamlink}#Intent;package=com.ttee.leeplayer;end`;
     window.location.href = openSplayer;
 }
 
