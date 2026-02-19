@@ -256,52 +256,41 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-const videolink = window.location.href;
-const streamlink = videolink.replace("/watch/", "/dl/");
+const streamlink = SIGNED_URL;
 
 function vlc_player() {
-    const openstreamlink = streamlink;
-    const openVlc = `vlc://${openstreamlink}`;
-    window.location.href = openVlc;
+    window.location.href = `vlc://${streamlink}`;
 }
 
 function mx_player() {
-    const openstreamlink = streamlink;
-    const openMx = `intent:${openstreamlink}#Intent;package=com.mxtech.videoplayer.ad;end`;
-    window.location.href = openMx;
+    window.location.href = `intent:${streamlink}#Intent;package=com.mxtech.videoplayer.ad;end`;
 }
 
 function playit_player() {
-    const openstreamlink = streamlink;
-    const openPlayit = `playit://playerv2/video?url=${openstreamlink}`;
-    window.location.href = openPlayit;
+    window.location.href = `playit://playerv2/video?url=${streamlink}`;
 }
 
 function s_player() {
-    const openstreamlink = streamlink;
-    const openSplayer = `intent:${openstreamlink}#Intent;package=com.ttee.leeplayer;end`;
-    window.location.href = openSplayer;
+    window.location.href = `intent:${streamlink}#Intent;package=com.ttee.leeplayer;end`;
 }
 
 function km_player() {
-    const openstreamlink = streamlink;
-    const openKmplayer = `intent:${openstreamlink}#Intent;package=com.kmplayer;end`;
-    window.location.href = openKmplayer;
+    window.location.href = `intent:${streamlink}#Intent;package=com.kmplayer;end`;
 }
 
 function hd_player() {
-    const openstreamlink = streamlink;
-    const openHDplayer = `intent:${openstreamlink}#Intent;package=uplayer.video.player;end`;
-    window.location.href = openHDplayer;
+    window.location.href = `intent:${streamlink}#Intent;package=uplayer.video.player;end`;
 }
 
 function streamDownload() {
-  const openstreamlink = streamlink;
-  window.location.href = openstreamlink;
+    window.location.href = streamlink;
 }
 
 function copyStreamLink() {
-  const linkToCopy = streamlink.toLowerCase();
+    navigator.clipboard.writeText(streamlink)
+        .then(() => alert("Stream link copied!"))
+        .catch(() => alert("Copy failed"));
+}
 
   if (!navigator.clipboard) {
     navigator.clipboard = {
